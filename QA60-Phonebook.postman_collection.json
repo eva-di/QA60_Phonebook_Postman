@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "267f5e84-c2df-481f-8491-a7d0698f95e9",
+		"name": "QA60-Phonebook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46881599"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Positive",
+					"item": [
+						{
+							"name": "Login registered UserPh",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var data = pm.response.json();\r",
+											"pm.environment.set(\"token\", data.token);\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"guest25@gmail.com\",\r\n  \"password\": \"Qa12345!\"\r\n}\r\n\r\n// {\r\n//   \"username\": \"testqa@ggmail.com\",\r\n//   \"password\": \"Qa12345!\"\r\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "contactapp-telran-backend.herokuapp.com/v1/user/login/usernamepassword",
+									"host": [
+										"contactapp-telran-backend",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"v1",
+										"user",
+										"login",
+										"usernamepassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Negative",
+					"item": [
+						{
+							"name": "Login User With Wrong Password (401)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message: Login or Password incorrect\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message).to.eql(\"Login or Password incorrect\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Value error: Unauthorized\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.eql(\"Unauthorized\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"guest25@gmail.com\",\r\n  \"password\": \"Qa12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "ilcarro-backend.herokuapp.com/v1/user/login/usernamepassword",
+									"host": [
+										"ilcarro-backend",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"v1",
+										"user",
+										"login",
+										"usernamepassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "Positive",
+					"item": [
+						{
+							"name": "Add contact",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Message equals: Contact was added!\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Contact was added!\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"3\",\r\n  \"name\": \"Jess\",\r\n  \"lastName\": \"Down\",\r\n  \"email\": \"jess@gmail.com\",\r\n  \"phone\": \"1234567890\",\r\n  \"address\": \"Paris\",\r\n  \"description\": \"Waitress\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURI}}/v1/contacts",
+									"host": [
+										"{{BaseURI}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all contacts",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURI}}/v1/contacts",
+									"host": [
+										"{{BaseURI}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update contact",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Message: Contact was updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(\"Contact was updated\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"id\": \"70afd259-f3f0-481d-b175-c33b37b1b534\",\r\n            \"name\": \"Zoe\",\r\n            \"lastName\": \"Jane\",\r\n            \"email\": \"zoe@gmail.com\",\r\n            \"phone\": \"123456789000\",\r\n            \"address\": \"Malta\",\r\n            \"description\": \"Flight attendant\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURI}}/v1/contacts",
+									"host": [
+										"{{BaseURI}}"
+									],
+									"path": [
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete contact",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Message: Contact was deleted!\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(\"Contact was deleted!\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseURI}}/v1/contacts/14435a27-1b4d-4caf-ad20-5033c82b04f4",
+									"host": [
+										"{{BaseURI}}"
+									],
+									"path": [
+										"v1",
+										"contacts",
+										"14435a27-1b4d-4caf-ad20-5033c82b04f4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register new user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"testqa@ggmail.com\",\r\n  \"password\": \"Qa12345!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURI}}/v1/user/registration/usernamepassword",
+									"host": [
+										"{{BaseURI}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"registration",
+										"usernamepassword"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Negative",
+					"item": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Response time is less than 1000ms\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
