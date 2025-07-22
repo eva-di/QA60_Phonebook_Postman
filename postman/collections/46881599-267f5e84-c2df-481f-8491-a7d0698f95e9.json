@@ -412,7 +412,7 @@
 											"pm.sendRequest({\r",
 											"    url:\"https://ilcarro-backend.herokuapp.com/v1/cars/my\",\r",
 											"    header:{\r",
-											"        \"Authorization\": pm.environment.get(\"accessToken\")\r",
+											"        \"Authorization\": pm.environment.get(\"token\")\r",
 											"    }\r",
 											"}, function(err,responseBody){\r",
 											"var responseJson = responseBody.json();\r",
