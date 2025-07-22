@@ -375,8 +375,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "a760a098-9d16-496e-81da-204c09c6c11c",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -398,6 +401,15 @@
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{BaseURI}}/v1/contacts/14435a27-1b4d-4caf-ad20-5033c82b04f4",
 									"host": [
