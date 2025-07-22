@@ -229,7 +229,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"id\": \"{{$timestamp}}\",\r\n  \"name\": \"{{name}}\",\r\n  \"lastName\": \"{{lastName}}\",\r\n  \"email\": \"{{email}}\",\r\n  \"phone\": \"{{phone}}}}\",\r\n  \"address\": \"{{address}}\",\r\n  \"description\": \"{{description}}\"\r\n}",
+									"raw": "{\r\n  \"id\": \"{{$timestamp}}\",\r\n  \"name\": \"Jess\",\r\n  \"lastName\": \"Down\",\r\n  \"email\": \"jess@gmail.com\",\r\n  \"phone\": \"1234567890\",\r\n  \"address\": \"Paris\",\r\n  \"description\": \"Waitress\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -267,10 +267,10 @@
 											"    sNumber.push(number)\r",
 											"}\r",
 											"sNumber = JSON.stringify(sNumber).substring(2,12);\r",
-											"pm.environment.set(\"serialNumber\",sNumber);\r",
+											"pm.environment.set(\"id\",sNumber);\r",
 											"\r",
 											"\r",
-											"console.log(\"serialNumber is \", sNumber)\r",
+											"console.log(\"id is \", sNumber)\r",
 											"\r",
 											"const varSerialNumber = pm.variables.get('snumber');"
 										],
