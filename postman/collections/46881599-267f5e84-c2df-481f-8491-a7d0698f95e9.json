@@ -307,7 +307,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"contacts\": [\r\n    {\r\n      \"id\": \"{{$random}}\",\r\n      \"name\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"email\": \"string\",\r\n      \"phone\": \"5524184042\",\r\n      \"address\": \"string\",\r\n      \"description\": \"string\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"contacts\": [\r\n    {\r\n      \"id\": \"{{id}}\",\r\n      \"name\": \"{{name}}\",\r\n      \"lastName\": \"{{lastName}}\",\r\n      \"email\": \"{{email}}\",\r\n      \"phone\": \"{{phone}}\",\r\n      \"address\": \"{{address}}\",\r\n      \"description\": \"{{description}}\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
