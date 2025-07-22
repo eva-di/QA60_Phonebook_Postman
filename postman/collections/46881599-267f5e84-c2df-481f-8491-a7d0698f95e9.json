@@ -410,7 +410,7 @@
 											"// });\r",
 											"\r",
 											"pm.sendRequest({\r",
-											"    url:\"https://contactapp-telran-backend.herokuapp.com/v1/contacts{{id}}\",\r",
+											"    url:\"https://contactapp-telran-backend.herokuapp.com/v1/contacts\",\r",
 											"    header:{\r",
 											"        \"Authorization\": pm.environment.get(\"token\")\r",
 											"    }\r",
