@@ -428,7 +428,7 @@
 											"pm.environment.set(\"id\",sNumber);\r",
 											"\r",
 											"\r",
-											"console.log(\"serialNumber is \", sNumber)\r",
+											"console.log(\"id is \", sNumber)\r",
 											"\r",
 											"});"
 										],
