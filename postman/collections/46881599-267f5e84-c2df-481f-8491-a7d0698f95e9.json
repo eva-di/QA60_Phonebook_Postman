@@ -229,7 +229,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"id\": \"3\",\r\n  \"name\": \"Jess\",\r\n  \"lastName\": \"Down\",\r\n  \"email\": \"jess@gmail.com\",\r\n  \"phone\": \"1234567890\",\r\n  \"address\": \"Paris\",\r\n  \"description\": \"Waitress\"\r\n}",
+									"raw": "{\r\n  \"contacts\": [\r\n    {\r\n      \"id\": \"{{id}}\",\r\n      \"name\": \"{{name}}\",\r\n      \"lastName\": \"{{lastName}}\",\r\n      \"email\": \"{{email}}\",\r\n      \"phone\": \"{{phone}}\",\r\n      \"address\": \"{{address}}\",\r\n      \"description\": \"{{description}}\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -310,7 +310,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"contacts\": [\r\n    {\r\n      \"id\": \"{{id}}\",\r\n      \"name\": \"{{name}}\",\r\n      \"lastName\": \"{{lastName}}\",\r\n      \"email\": \"{{email}}\",\r\n      \"phone\": \"{{phone}}\",\r\n      \"address\": \"{{address}}\",\r\n      \"description\": \"{{description}}\"\r\n    }\r\n  ]\r\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
