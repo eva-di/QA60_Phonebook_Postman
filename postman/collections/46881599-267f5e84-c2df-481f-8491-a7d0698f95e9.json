@@ -266,7 +266,7 @@
 											"    number = counter.id\r",
 											"    sNumber.push(number)\r",
 											"}\r",
-											"sNumber = JSON.stringify(sNumber).substring(2,36);\r",
+											"sNumber = JSON.stringify(sNumber).substring(1,36);\r",
 											"pm.environment.set(\"id\",sNumber);\r",
 											"\r",
 											"\r",
