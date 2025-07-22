@@ -256,7 +256,7 @@
 										"exec": [
 											"var responseJson = JSON.parse(responseBody);\r",
 											"var sNumber =[];\r",
-											"var list = (responseJson.cars).length;\r",
+											"var list = (responseJson.сщтефсеы).length;\r",
 											"\r",
 											"for(var i = 0;i< list; i++){\r",
 											"    var counter = responseJson.cars[i];\r",
@@ -278,7 +278,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "37b03c6a-3e63-4b27-8de1-702ea9b83562",
+										"id": "f5ef88d6-0037-4e61-a497-676ce714a379",
 										"exec": [],
 										"type": "text/javascript"
 									}
