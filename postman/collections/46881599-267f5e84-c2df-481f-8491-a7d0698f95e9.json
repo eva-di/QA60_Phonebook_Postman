@@ -263,7 +263,7 @@
 											"\r",
 											"for(var i = 0;i< list; i++){\r",
 											"    var counter = responseJson.contacts[i];\r",
-											"    number = counter.serialNumber\r",
+											"    number = counter.id\r",
 											"    sNumber.push(number)\r",
 											"}\r",
 											"sNumber = JSON.stringify(sNumber).substring(2,12);\r",
