@@ -417,7 +417,7 @@
 											"}, function(err,responseBody){\r",
 											"var responseJson = responseBody.json();\r",
 											"var sNumber =[];\r",
-											"var list = (responseJson.cars).length;\r",
+											"var list = (responseJson.contacts).length;\r",
 											"\r",
 											"for(var i = 0;i< list; i++){\r",
 											"    var counter = responseJson.cars[i];\r",
