@@ -248,6 +248,42 @@
 						},
 						{
 							"name": "Get all contacts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "155e902b-9d36-4cb7-869b-4576d3f0383f",
+										"exec": [
+											"// var responseJson = JSON.parse(responseBody);\r",
+											"// var sNumber =[];\r",
+											"// var list = (responseJson.cars).length;\r",
+											"\r",
+											"// for(var i = 0;i< list; i++){\r",
+											"//     var counter = responseJson.cars[i];\r",
+											"//     number = counter.serialNumber\r",
+											"//     sNumber.push(number)\r",
+											"// }\r",
+											"// sNumber = JSON.stringify(sNumber).substring(2,12);\r",
+											"// pm.environment.set(\"serialNumber\",sNumber);\r",
+											"\r",
+											"\r",
+											"// console.log(\"serialNumber is \", sNumber)\r",
+											"\r",
+											"// const varSerialNumber = pm.variables.get('snumber');"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "16023233-51fb-4c5e-a66f-0a2062c4da72",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"id": "46881599-3ca6c123-7f5e-486b-a144-1131d1c5b08b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
