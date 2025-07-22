@@ -415,7 +415,7 @@
 											"        \"Authorization\": pm.environment.get(\"token\")\r",
 											"    }\r",
 											"}, function(err,responseBody){\r",
-											"var responseJson = responseBody.json();\r",
+											"var responseJson = response.json(); \r",
 											"var sNumber =[];\r",
 											"var list = (responseJson.contacts).length;\r",
 											"\r",
