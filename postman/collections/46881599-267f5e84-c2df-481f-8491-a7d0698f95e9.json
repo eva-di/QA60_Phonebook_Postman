@@ -254,22 +254,22 @@
 									"script": {
 										"id": "155e902b-9d36-4cb7-869b-4576d3f0383f",
 										"exec": [
-											"// var responseJson = JSON.parse(responseBody);\r",
-											"// var sNumber =[];\r",
-											"// var list = (responseJson.contacts).length;\r",
+											"var responseJson = JSON.parse(responseBody);\r",
+											"var sNumber =[];\r",
+											"var list = (responseJson.contacts).length;\r",
 											"\r",
-											"// for(var i = 0;i< list; i++){\r",
-											"//     var counter = responseJson.contacts[i];\r",
-											"//     number = counter.serialNumber\r",
-											"//     sNumber.push(number)\r",
-											"// }\r",
-											"// sNumber = JSON.stringify(sNumber).substring(2,12);\r",
-											"// pm.environment.set(\"serialNumber\",sNumber);\r",
+											"for(var i = 0;i< list; i++){\r",
+											"    var counter = responseJson.contacts[i];\r",
+											"    number = counter.serialNumber\r",
+											"    sNumber.push(number)\r",
+											"}\r",
+											"sNumber = JSON.stringify(sNumber).substring(2,12);\r",
+											"pm.environment.set(\"serialNumber\",sNumber);\r",
 											"\r",
 											"\r",
-											"// console.log(\"serialNumber is \", sNumber)\r",
+											"console.log(\"serialNumber is \", sNumber)\r",
 											"\r",
-											"// const varSerialNumber = pm.variables.get('snumber');"
+											"const varSerialNumber = pm.variables.get('snumber');"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -278,7 +278,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "9fd5ad37-b7f5-4ce8-99c3-ecfb41681d6f",
+										"id": "470f2ef9-96f1-4252-9aad-1a689b5f4c04",
 										"exec": [],
 										"type": "text/javascript"
 									}
