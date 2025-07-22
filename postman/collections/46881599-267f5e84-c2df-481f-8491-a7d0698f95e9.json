@@ -476,14 +476,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{BaseURI}}/v1/contacts/14435a27-1b4d-4caf-ad20-5033c82b04f4",
+									"raw": "{{BaseURI}}/v1/contacts/{{id}}",
 									"host": [
 										"{{BaseURI}}"
 									],
 									"path": [
 										"v1",
 										"contacts",
-										"14435a27-1b4d-4caf-ad20-5033c82b04f4"
+										"{{id}}"
 									]
 								}
 							},
