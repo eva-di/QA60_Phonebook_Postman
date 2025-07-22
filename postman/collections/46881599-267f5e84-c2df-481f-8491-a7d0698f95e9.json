@@ -201,8 +201,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "79bf3b5f-f2ae-44a1-8cc3-c841ebc0001b",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
