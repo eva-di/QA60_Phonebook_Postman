@@ -256,10 +256,10 @@
 										"exec": [
 											"var responseJson = JSON.parse(responseBody);\r",
 											"var sNumber =[];\r",
-											"var list = (responseJson.сщтефсеы).length;\r",
+											"var list = (responseJson.contacts).length;\r",
 											"\r",
 											"for(var i = 0;i< list; i++){\r",
-											"    var counter = responseJson.cars[i];\r",
+											"    var counter = responseJson.contacts[i];\r",
 											"    number = counter.serialNumber\r",
 											"    sNumber.push(number)\r",
 											"}\r",
@@ -278,7 +278,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "f5ef88d6-0037-4e61-a497-676ce714a379",
+										"id": "f9d690f0-c00b-4ad2-bb91-598fa0932d14",
 										"exec": [],
 										"type": "text/javascript"
 									}
