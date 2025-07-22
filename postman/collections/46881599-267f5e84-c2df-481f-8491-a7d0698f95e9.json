@@ -420,7 +420,28 @@
 									"script": {
 										"id": "a760a098-9d16-496e-81da-204c09c6c11c",
 										"exec": [
-											""
+											"pm.sendRequest({\r",
+											"    url:\"https://contactapp-telran-backend.herokuapp.com/v1/contacts\",\r",
+											"    header:{\r",
+											"        \"Authorization\": pm.environment.get(\"token\")\r",
+											"    }\r",
+											"}, function(err,responseBody){\r",
+											"var responseJson = responseBody.json();\r",
+											"var sNumber =[];\r",
+											"var list = (responseJson.contacts).length;\r",
+											"\r",
+											"for(var i = 0;i< list; i++){\r",
+											"    var counter = responseJson.contacts[i];\r",
+											"    number = counter.id\r",
+											"    sNumber.push(number)\r",
+											"}\r",
+											"sNumber = JSON.stringify(sNumber).substring(2,38);\r",
+											"pm.environment.set(\"id\",sNumber);\r",
+											"\r",
+											"\r",
+											"console.log(\"id is \", sNumber)\r",
+											"\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
